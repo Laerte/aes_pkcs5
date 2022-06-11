@@ -12,5 +12,4 @@ Installing AESPKCS5
 
 You can install AESPKCS5 from PyPI with::
 
-    pip install aes_pkcs5
-
+    pip install aes-pkcs5

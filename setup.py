@@ -12,7 +12,7 @@ class CustomDevelopCommand(develop):
         os.system("pre-commit install")
 
 
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 
 requires = ["cryptography >= 37.0.2"]
 
@@ -21,10 +21,14 @@ extras = {
     "development": ["black >= 22.3.0", "isort >= 5.10.1", "pre-commit >= 2.19.0"],
 }
 
+with open("README.rst") as f:
+    long_description = f.read()
+
 setup(
     name="aes_pkcs5",
     version=__version__,
-    description="Python implementation of AES with CBC/ECB mode and padding scheme PKCS5",
+    description="Implementation of AES with CBC/ECB mode and padding scheme PKCS5",
+    long_description=long_description,
     author="Laerte Pereira",
     author_email="hi@laerte.dev",
     url="https://github.com/Laerte/aes_pkcs5",
