@@ -12,7 +12,7 @@ class CustomDevelopCommand(develop):
         os.system("pre-commit install")
 
 
-__version__ = "0.0.3"
+__version__ = "0.0.4"
 
 requires = ["cryptography >= 37.0.2"]
 
