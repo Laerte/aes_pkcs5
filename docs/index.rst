@@ -17,11 +17,11 @@ First steps
    :maxdepth: 2
    :hidden:
 
-   intro/install
-   intro/overview
+   install
+   overview
 
-:doc:`intro/install`
+:doc:`install`
    Get AESPKCS5 installed on your computer.
 
-:doc:`intro/overview`
+:doc:`overview`
    How AESPKCS5 works.
