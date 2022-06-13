@@ -4,7 +4,7 @@ from binascii import unhexlify
 
 from cryptography.hazmat.primitives.ciphers import Cipher
 
-OUTPUT_FORMATS = ["b64", "hex"]
+OUTPUT_FORMATS = ("b64", "hex")
 
 
 class AESCommon(metaclass=ABCMeta):
@@ -14,7 +14,9 @@ class AESCommon(metaclass=ABCMeta):
         self._key = key.encode()
 
         if output_format not in OUTPUT_FORMATS:
-            raise NotImplemented(f"Output Format: {output_format} not implemented")
+            raise NotImplementedError(
+                f"Support for output format: {output_format} is not implemented"
+            )
 
         self._output_format = output_format
 
