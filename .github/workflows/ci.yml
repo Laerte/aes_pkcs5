@@ -45,4 +45,5 @@ jobs:
         tox
 
     - name: Upload coverage to Codecov
+      if: ${{ matrix.env.TOXENV != 'docs' }}
       uses: codecov/codecov-action@v2
