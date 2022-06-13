@@ -2,7 +2,7 @@
 AESPKCS5
 ========
 
-|CI| |PyPI| |Python Version| |docs|
+|CI| |PyPI| |Python Version| |docs| |codecov|
 
 .. |PyPI| image:: https://img.shields.io/pypi/v/aes-pkcs5.svg
    :target: https://pypi.org/project/aes-pkcs5/
@@ -13,6 +13,9 @@ AESPKCS5
     :alt: Documentation Status
     :scale: 100%
     :target: https://aes-pkcs5.readthedocs.io/en/latest/?badge=latest
+.. |codecov| image:: https://codecov.io/gh/Laerte/aes_pkcs5/branch/main/graph/badge.svg?token=LX57VQB8ZB
+   :target: https://codecov.io/gh/Laerte/aes_pkcs5
+    
 
 Python implementation of AES with CBC/ECB mode and padding scheme PKCS5.
 
