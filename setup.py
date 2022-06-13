@@ -8,7 +8,7 @@ class CustomDevelopCommand(develop):
     """Instal development dependencies"""
 
     def install_for_development(self):
-        os.system("pip install '.[development]'")
+        os.system("pip install -r requirements-dev.txt")
         os.system("pre-commit install")
 
 
@@ -16,9 +16,7 @@ __version__ = "0.0.4"
 
 requires = ["cryptography >= 37.0.2"]
 
-extras = {
-    "development": ["black >= 22.3.0", "isort >= 5.10.1", "pre-commit >= 2.19.0"],
-}
+extras = {}
 
 with open("README.rst") as f:
     long_description = f.read()
