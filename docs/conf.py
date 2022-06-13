@@ -55,7 +55,7 @@ html_static_path = ["_static"]
 
 try:
     from importlib.metadata import version
-except ModuleNotFoundError:  # Python <= 3.7
+except ModuleNotFoundError:  # Python < 3.8
     from importlib_metadata import version
 
 version = version("aes_pkcs5")
