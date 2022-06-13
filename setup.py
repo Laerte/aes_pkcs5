@@ -17,7 +17,6 @@ __version__ = "0.0.4"
 requires = ["cryptography >= 37.0.2"]
 
 extras = {
-    "test": ["pytest >= 7.1.2"],
     "development": ["black >= 22.3.0", "isort >= 5.10.1", "pre-commit >= 2.19.0"],
 }
 
