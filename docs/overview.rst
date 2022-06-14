@@ -45,7 +45,7 @@ Example::
     # hex
     output_format = "hex"
     cipher = AESCBCPKCS5Padding(key, output_format, iv_parameter)
-    encrypted = cipher.encrypt("Hello World")
+    encrypted = cipher.encrypt(message)
     assert encrypted == "3212ff57bf240b7adc6259e53e0d4be2"
     assert cipher.decrypt(encrypted) == message
 
