@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = "AES PKCS5"
+project = "AESPKCS5"
 copyright = "2022, Laerte Pereira"
 author = "Laerte Pereira"
 
