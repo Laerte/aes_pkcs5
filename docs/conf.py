@@ -13,12 +13,12 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-
+from datetime import datetime
 
 # -- Project information -----------------------------------------------------
 
 project = "AESPKCS5"
-copyright = "2022, Laerte Pereira"
+copyright = f"{datetime.utcnow():%Y}, Laerte Pereira"
 author = "Laerte Pereira"
 
 # The full version, including alpha/beta/rc tags
