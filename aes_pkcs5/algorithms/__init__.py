@@ -66,4 +66,3 @@ class AESCommon(metaclass=ABCMeta):
         """
         Return the Cipher that will be used
         """
-        pass
