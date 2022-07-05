@@ -1,4 +1,4 @@
-import os
+from os import system
 
 from setuptools import find_packages, setup
 from setuptools.command.develop import develop
@@ -8,11 +8,11 @@ class CustomDevelopCommand(develop):
     """Instal development dependencies"""
 
     def install_for_development(self):
-        os.system("pip install -r requirements-dev.txt")
-        os.system("pre-commit install")
+        system("pip install -r requirements-dev.txt")
+        system("pre-commit install")
 
 
-__version__ = "0.0.6"
+__version__ = "0.1.0"
 
 requires = ["cryptography >= 37.0.2"]
 
@@ -28,10 +28,14 @@ setup(
     long_description=long_description,
     author="Laerte Pereira",
     author_email="hi@laerte.dev",
+    license="BSD",
     url="https://github.com/Laerte/aes_pkcs5",
     packages=find_packages(include=["aes_pkcs5*"], exclude=["tests.*"]),
     classifiers=[
         "Intended Audience :: Developers",
+        "Development Status :: 5 - Production/Stable",
+        "Operating System :: OS Independent",
+        "License :: OSI Approved :: BSD License",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.7",
@@ -39,6 +43,7 @@ setup(
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: Implementation :: CPython",
+        "Programming Language :: Python :: Implementation :: PyPy",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
     python_requires=">=3.7",
