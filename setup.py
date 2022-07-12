@@ -3,6 +3,8 @@ from os import system
 from setuptools import find_packages, setup
 from setuptools.command.develop import develop
 
+from aes_pkcs5 import __version__
+
 
 class CustomDevelopCommand(develop):
     """Instal development dependencies"""
@@ -11,8 +13,6 @@ class CustomDevelopCommand(develop):
         system("pip install -r requirements-dev.txt")
         system("pre-commit install")
 
-
-__version__ = "0.1.0"
 
 requires = ["cryptography >= 37.0.2"]
 
