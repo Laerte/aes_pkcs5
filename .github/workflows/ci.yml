@@ -63,5 +63,5 @@ jobs:
         tox
 
     - name: Upload coverage to Codecov
-      if: ${{ matrix.python-version == 3.10 && matrix.env.TOXENV == 'py' }}
+      if: ${{ matrix.python-version == 3.10 || matrix.python-version == 3.7 && matrix.env.TOXENV == 'py' }}
       uses: codecov/codecov-action@v2
