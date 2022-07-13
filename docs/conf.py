@@ -15,11 +15,13 @@
 # sys.path.insert(0, os.path.abspath('.'))
 from datetime import datetime
 
+from aes_pkcs5 import __author__, __version__
+
 # -- Project information -----------------------------------------------------
 
 project = "AESPKCS5"
-copyright = f"{datetime.utcnow():%Y}, Laerte Pereira"
-author = "Laerte Pereira"
+copyright = f"{datetime.utcnow():%Y}, {__author__}"
+author = __author__
 
 # The full version, including alpha/beta/rc tags
 release = "2022"
@@ -53,9 +55,4 @@ html_theme = "sphinx_rtd_theme"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 
-try:
-    from importlib.metadata import version
-except ModuleNotFoundError:  # Python < 3.8
-    from importlib_metadata import version
-
-version = version("aes_pkcs5")
+version = __version__
