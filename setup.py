@@ -14,7 +14,7 @@ class CustomDevelopCommand(develop):
         system("pre-commit install")
 
 
-requires = ["cryptography >= 37.0.2"]
+requires = ["cryptography >= 38.0.1"]
 
 extras = {}
 
