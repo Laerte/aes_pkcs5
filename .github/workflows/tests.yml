@@ -1,8 +1,8 @@
-name: CI
+name: Tests
 on: [push, pull_request]
 
 jobs:
-  Tests:
+  tests:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
