@@ -30,6 +30,11 @@ setup(
     author_email="hi@laerte.dev",
     license="BSD",
     url="https://github.com/Laerte/aes_pkcs5",
+    project_urls={
+        "Documentation": "https://aes-pkcs5.readthedocs.io",
+        "Source": "https://github.com/Laerte/aes_pkcs5",
+        "Tracker": "https://github.com/Laerte/aes_pkcs5/issues",
+    },
     packages=find_packages(include=["aes_pkcs5*"], exclude=["tests.*"]),
     classifiers=[
         "Intended Audience :: Developers",
