@@ -26,6 +26,7 @@ setup(
     version=__version__,
     description="Implementation of AES with CBC/ECB mode and padding scheme PKCS5",
     long_description=long_description,
+    long_description_content_type="text/x-rst",
     author="Laerte Pereira",
     author_email="hi@laerte.dev",
     license="BSD",
