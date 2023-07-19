@@ -22,7 +22,7 @@ Python implementation of AES with CBC/ECB mode and padding scheme PKCS5.
 ============
 Requirements
 ============
-* Python 3.7+
+* Python 3.8+
 
 Install
 =======
