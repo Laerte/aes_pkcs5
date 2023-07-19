@@ -1,6 +1,5 @@
-from sys import version_info
-
 from importlib.metadata import metadata
+from sys import version_info
 
 _pkg_info = metadata("aes_pkcs5")
 
