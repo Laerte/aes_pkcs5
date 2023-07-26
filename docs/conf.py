@@ -14,14 +14,13 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 from datetime import datetime
-
-from aes_pkcs5 import __author__, __version__
+from importlib.metadata import metadata
 
 # -- Project information -----------------------------------------------------
 
 project = "AESPKCS5"
-copyright = f"{datetime.utcnow():%Y}, {__author__}"
-author = __author__
+author = metadata("aes_pkcs5")["Author"]
+copyright = f"{datetime.utcnow():%Y}, {author}"
 
 # The full version, including alpha/beta/rc tags
 release = "2022"
@@ -55,4 +54,4 @@ html_theme = "sphinx_rtd_theme"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 
-version = __version__
+version = metadata("aes_pkcs5")["Version"]
