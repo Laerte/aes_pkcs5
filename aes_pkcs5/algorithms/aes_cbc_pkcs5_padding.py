@@ -13,7 +13,10 @@ class AESCBCPKCS5Padding(AESCommon):
     """
 
     def __init__(
-        self, key: Union[str, bytes], output_format: str, iv_parameter: str | bytes
+        self,
+        key: Union[str, bytes],
+        output_format: str,
+        iv_parameter: Union[str, bytes],
     ):
         super(AESCBCPKCS5Padding, self).__init__(key=key, output_format=output_format)
         self._iv_parameter = (
