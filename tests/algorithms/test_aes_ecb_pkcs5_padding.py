@@ -40,10 +40,11 @@ from tests.algorithms import (
     ],
 )
 def test_encrypt_and_decrypt_and_output_formats(
-    key: str, expected_outputs: Dict[str, List[str]]
+    key: str | bytes, expected_outputs: Dict[str, List[str]]
 ):
-    for output_format in OUTPUT_FORMATS:
-        cipher = AESECBPKCS5Padding(key, output_format)
-        encrypted_output = cipher.encrypt(INPUT_VALUE)
-        assert encrypted_output == expected_outputs.get(output_format)
-        assert cipher.decrypt(encrypted_output) == INPUT_VALUE
+    for key in [key, key.encode()]:
+        for output_format in OUTPUT_FORMATS:
+            cipher = AESECBPKCS5Padding(key, output_format)
+            encrypted_output = cipher.encrypt(INPUT_VALUE)
+            assert encrypted_output == expected_outputs.get(output_format)
+            assert cipher.decrypt(encrypted_output) == INPUT_VALUE

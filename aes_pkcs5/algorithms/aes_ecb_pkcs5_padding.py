@@ -10,7 +10,7 @@ class AESECBPKCS5Padding(AESCommon):
     Implements AES algorithm with ECB mode of operation and padding scheme PKCS5.
     """
 
-    def __init__(self, key: str, output_format: str):
+    def __init__(self, key: str | bytes, output_format: str):
         super(AESECBPKCS5Padding, self).__init__(key=key, output_format=output_format)
 
     def _get_cipher(self):
