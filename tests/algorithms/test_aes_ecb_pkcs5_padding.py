@@ -1,5 +1,5 @@
 # isort: skip_file
-from typing import Dict, List
+from typing import Dict, List, Union
 
 from pytest import mark
 
@@ -40,7 +40,7 @@ from tests.algorithms import (
     ],
 )
 def test_encrypt_and_decrypt_and_output_formats(
-    key: str | bytes, expected_outputs: Dict[str, List[str]]
+    key: Union[str, bytes], expected_outputs: Dict[str, List[str]]
 ):
     for key in [key, key.encode()]:
         for output_format in OUTPUT_FORMATS:
