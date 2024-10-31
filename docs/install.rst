@@ -5,7 +5,7 @@ Installation guide
 Supported Python versions
 =========================
 
-AESPKCS5 requires Python 3.8+ and depends only of ``cryptography`` package.
+AESPKCS5 requires Python 3.9+ and depends only of ``cryptography`` package.
 
 Installing AESPKCS5
 ====================
