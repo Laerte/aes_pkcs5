@@ -6,3 +6,4 @@ venv/
 build/
 dist/
 _build/
+.DS_Store
