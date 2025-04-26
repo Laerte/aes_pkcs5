@@ -19,7 +19,8 @@ from importlib.metadata import metadata
 # -- Project information -----------------------------------------------------
 
 project = "AESPKCS5"
-author = metadata("aes_pkcs5")["Author"]
+
+author = "Laerte Pereira"
 copyright = f"{datetime.utcnow():%Y}, {author}"
 
 # The full version, including alpha/beta/rc tags

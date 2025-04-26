@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "aes_pkcs5"
-version = "1.0.3"
+version = "1.0.4"
 description = "Implementation of AES with CBC/ECB mode and padding scheme PKCS5"
 readme = {file = "README.rst", content-type = "text/x-rst"}
 authors = [
@@ -44,9 +44,10 @@ Documentation = "https://aes-pkcs5.readthedocs.io"
 Source = "https://github.com/Laerte/aes_pkcs5"
 Tracker = "https://github.com/Laerte/aes_pkcs5/issues"
 
-[tool.hatch.build]
-include = ["aes_pkcs5*"]
-exclude = ["tests*"]
+[tool.hatch.build.targets.sdist]
+include = [
+  "aes_pkcs5*",
+]
 
 [project.optional-dependencies]
 dev = [
