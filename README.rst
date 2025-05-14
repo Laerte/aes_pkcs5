@@ -17,6 +17,9 @@ AESPKCS5
 .. image:: https://codecov.io/gh/Laerte/aes_pkcs5/branch/main/graph/badge.svg?token=LX57VQB8ZB
    :target: https://codecov.io/gh/Laerte/aes_pkcs5
    :alt: Coverage report
+.. image:: https://deepwiki.com/badge.svg
+   :target: https://deepwiki.com/Laerte/aes_pkcs5
+   :alt: Ask DeepWiki
 
 Python implementation of AES with CBC/ECB mode and padding scheme PKCS5.
 
