@@ -55,4 +55,12 @@ html_theme = "sphinx_rtd_theme"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 
+html_context = {
+    "display_github": True,
+    "github_user": "Laerte",
+    "github_repo": "aes_pkcs5",
+    "github_version": "main",
+    "conf_py_path": "/docs/",
+}
+
 version = metadata("aes_pkcs5")["Version"]
