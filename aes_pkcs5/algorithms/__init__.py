@@ -1,17 +1,16 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 from base64 import b64decode, b64encode
 from binascii import unhexlify
-from typing import Union
 
 from cryptography.hazmat.primitives.ciphers import Cipher
 
 OUTPUT_FORMATS = ("b64", "hex")
 
 
-class AESCommon(metaclass=ABCMeta):
+class AESCommon(ABC):
     """Common AES interface"""
 
-    def __init__(self, key: Union[str, bytes], output_format: str) -> None:
+    def __init__(self, key: str | bytes, output_format: str) -> None:
         self._key = key if isinstance(key, bytes) else key.encode()
 
         if output_format not in OUTPUT_FORMATS:

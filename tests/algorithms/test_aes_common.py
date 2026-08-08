@@ -16,5 +16,5 @@ def test_not_implemented_output_format():
 
 
 def test_dummy_get_cipher():
-    for key in ["key", "key".encode()]:
+    for key in ["key", b"key"]:
         assert DummyCipher(key, "b64")._get_cipher() == "dummy_cipher"

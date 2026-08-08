@@ -38,3 +38,9 @@ You can install AESPKCS5 from PyPI with::
 Documentation
 =============
 Documentation is available online at: https://aes-pkcs5.readthedocs.io/
+
+============
+Contributing
+============
+See the `contributing guide <https://aes-pkcs5.readthedocs.io/en/latest/contributing.html>`_
+to set up a development environment.
