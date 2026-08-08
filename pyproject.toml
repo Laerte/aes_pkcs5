@@ -28,33 +28,73 @@ classifiers = [
     "Programming Language :: Python :: 3.14",
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python :: Implementation :: PyPy",
-    "Topic :: Software Development :: Libraries :: Python Modules"
+    "Topic :: Security :: Cryptography",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed"
 ]
 requires-python = ">= 3.10"
 dependencies = [
     "cryptography >= 41.0.2"
 ]
 
-[metadata]
-url = "https://github.com/Laerte/aes_pkcs5"
-
-
 [project.urls]
+Homepage = "https://github.com/Laerte/aes_pkcs5"
 Documentation = "https://aes-pkcs5.readthedocs.io"
 Source = "https://github.com/Laerte/aes_pkcs5"
 Tracker = "https://github.com/Laerte/aes_pkcs5/issues"
+
+[dependency-groups]
+test = [
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0"
+]
+# Sphinx 9.x requires Python >= 3.12; docs are only ever built on 3.13 (CI and RTD).
+# The marker keeps the lock resolvable across the 3.10+ range the library supports.
+docs = [
+    "Sphinx>=9.1.0; python_version >= '3.12'",
+    "sphinx-rtd-theme>=3.1.0; python_version >= '3.12'"
+]
+# Keep the ruff pin in sync with the rev in .pre-commit-config.yaml
+lint = [
+    "ruff==0.16.2"
+]
+dev = [
+    {include-group = "test"},
+    {include-group = "docs"},
+    {include-group = "lint"},
+    "pre-commit>=4.4.0"
+]
 
 [tool.hatch.build.targets.sdist]
 include = [
   "aes_pkcs5*",
 ]
 
-[project.optional-dependencies]
-dev = [
-    "black>=23.7.0",
-    "isort>=5.12.0",
-    "pre-commit>=3.3.3"
+[tool.hatch.build.targets.wheel]
+packages = ["aes_pkcs5"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["F", "E", "W", "I", "UP"]
+ignore = [
+    "E501",  # line length is the formatter's job; only unsplittable strings remain
 ]
 
-[tool.hatch.scripts]
-post-install = "pre-commit install"
+[tool.ruff.lint.isort]
+known-first-party = ["aes_pkcs5", "tests"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+addopts = "-ra --strict-markers --strict-config"
+xfail_strict = true
+
+[tool.coverage.run]
+branch = true
+source = ["aes_pkcs5"]
+
+[tool.coverage.report]
+exclude_also = ["@(abc\\.)?abstractmethod"]

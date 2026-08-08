@@ -5,10 +5,9 @@ updates:
     schedule:
       interval: "weekly"
 
-  - package-ecosystem: "pip"
-    directories:
-      - "/"
-      - "/docs"
-      - "/tests"
+  # The `pip` ecosystem cannot read uv.lock; `uv` reads [project.dependencies]
+  # and [dependency-groups] from pyproject.toml and updates the lock alongside.
+  - package-ecosystem: "uv"
+    directory: "/"
     schedule:
       interval: "weekly"

@@ -19,9 +19,13 @@ First steps
 
    install
    overview
+   contributing
 
 :doc:`install`
    Get AESPKCS5 installed on your computer.
 
 :doc:`overview`
    How AESPKCS5 works.
+
+:doc:`contributing`
+   Set up a development environment and contribute to AESPKCS5.

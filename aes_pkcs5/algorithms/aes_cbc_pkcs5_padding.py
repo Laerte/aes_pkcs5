@@ -1,6 +1,3 @@
-from typing import Union
-
-from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives.ciphers.algorithms import AES
 from cryptography.hazmat.primitives.ciphers.modes import CBC
 
@@ -14,17 +11,15 @@ class AESCBCPKCS5Padding(AESCommon):
 
     def __init__(
         self,
-        key: Union[str, bytes],
+        key: str | bytes,
         output_format: str,
-        iv_parameter: Union[str, bytes],
+        iv_parameter: str | bytes,
     ):
-        super(AESCBCPKCS5Padding, self).__init__(key=key, output_format=output_format)
+        super().__init__(key=key, output_format=output_format)
         self._iv_parameter = (
             iv_parameter if isinstance(iv_parameter, bytes) else iv_parameter.encode()
         )
 
-    def _get_cipher(self):
+    def _get_cipher(self) -> Cipher:
         """Return AES/CBC/PKCS5Padding Cipher"""
-        return Cipher(
-            AES(self._key), mode=CBC(self._iv_parameter), backend=default_backend()
-        )
+        return Cipher(AES(self._key), mode=CBC(self._iv_parameter))

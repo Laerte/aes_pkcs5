@@ -1,15 +1,12 @@
-# isort: skip_file
-from typing import Dict, List, Union
-
 from pytest import mark
 
+from aes_pkcs5.algorithms import OUTPUT_FORMATS
 from aes_pkcs5.algorithms.aes_ecb_pkcs5_padding import AESECBPKCS5Padding
 from tests.algorithms import (
     _128_BITS_KEY,
     _192_BITS_KEY,
     _256_BITS_KEY,
     INPUT_VALUE,
-    OUTPUT_FORMATS,
 )
 
 
@@ -40,7 +37,7 @@ from tests.algorithms import (
     ],
 )
 def test_encrypt_and_decrypt_and_output_formats(
-    key: Union[str, bytes], expected_outputs: Dict[str, List[str]]
+    key: str | bytes, expected_outputs: dict[str, list[str]]
 ):
     for key in [key, key.encode()]:
         for output_format in OUTPUT_FORMATS:

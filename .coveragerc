@@ -1,6 +1,0 @@
-[run]
-branch = true
-include = aes_pkcs5/*
-omit =
-  tests/*
-  setup.py
