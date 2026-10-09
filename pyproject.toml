@@ -56,7 +56,7 @@ docs = [
 ]
 # Keep the ruff pin in sync with the rev in .pre-commit-config.yaml
 lint = [
-    "ruff==0.16.7"
+    "ruff==0.16.10"
 ]
 dev = [
     {include-group = "test"},
